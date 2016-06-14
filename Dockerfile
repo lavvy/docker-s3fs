@@ -25,4 +25,4 @@ RUN cd /usr/src/s3fs-fuse-${VERSION} && ./autogen.sh && ./configure --prefix=/us
 ADD s3fs.sh /root/s3fs.sh
 RUN chmod +x /root/s3fs.sh
 
-CMD ["/root/s3fs.sh"]
+CMD ["/bin/bash"]
