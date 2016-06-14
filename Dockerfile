@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Xueshan Feng <xueshan.feng@gmail.com>
+MAINTAINER Xueshan Feng edited by lavvy <xueshan.feng@gmail.com>
 
 ENV VERSION 1.80
 ENV S3User AWSS3User
@@ -25,6 +25,6 @@ RUN cd /usr/src/s3fs-fuse-${VERSION} && ./autogen.sh && ./configure --prefix=/us
 ADD s3fs.sh /root/s3fs.sh
 RUN chmod +x /root/s3fs.sh
 
-RUN sed -i -e '$i \/root/s3fs.sh\n' /etc/rc.local
+WORKDIR /root
 
 CMD ["/bin/bash"]
